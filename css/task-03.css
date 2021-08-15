@@ -1,0 +1,17 @@
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card-set {
+  display: flex;
+  flex-direction: column;
+  margin-top: -30px;
+  margin-left: -30px;
+}
+
+.card-set__item {
+  margin-top: 30px;
+  margin-left: 30px;
+}
