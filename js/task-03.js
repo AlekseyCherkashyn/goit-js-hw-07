@@ -1,4 +1,7 @@
 const gallery = document.querySelector("#gallery");
+gallery.classList.add("list");
+gallery.classList.add("card-set");
+
 const images = [
     {
         url: 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
@@ -13,16 +16,14 @@ const images = [
         alt: 'Group of Horses Running',
     },
 ];
-gallery.classList.add("list");
-gallery.classList.add("card-set");
 
-
-
-const listInsert = function (el, list) {
-  const markUpString = el.insertAdjacentHTML('afterbegin', list.reduce(
-    (string, item) => string + `<li class="card-set__item"><img src="${item.url} alt="${item.alt}"width="1260px" height="750px"></li>`,
-    ""
-  ));
+const listInsert = function (list) {
+  const markUpString = list.reduce(
+      (string, item) => string +
+          `<li class="card-set__item">
+          <img src="${item.url} alt="${item.alt}" width="280px" height="160">
+          </li>`, "");
+    gallery.insertAdjacentHTML('afterbegin', markUpString);
     return markUpString;
 }
-listInsert(gallery, images);
+listInsert(images);
